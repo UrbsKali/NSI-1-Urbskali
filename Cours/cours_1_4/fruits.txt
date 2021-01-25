@@ -1,0 +1,4 @@
+Nom;Prix;Code
+Banane;5,99€/kg;70
+Pomme;2,99€/kg;99
+Cerise;7,99€/kg;50
