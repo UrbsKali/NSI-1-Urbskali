@@ -1,3 +1,12 @@
+"""
+20/20
+Bravo pour l'investissement. TB pour l'utilisation de fonctions annexes regroupées dans un dossier ad hoc.
+Piste d'amélioration:
+- condenser votre code en réduisant les fonctions répétitives: get_case(x, y), get_case_val(case), player_, win(surface):
+
+A vue de nez, votre programme (complet) doit pouvoir tenir en 100 lignes (commentaires non compris)
+"""
+
 import pygame
 from .morpion import *
 
@@ -24,8 +33,8 @@ def main():
 				# pour quitter la boucle
 				if event.type == pygame.QUIT: # si on close la fenetre, on quite la boucle
 						run = False 
-				for key in pygame.key.get_pressed():
-					if key == True:  # si une key est pressed 
+				if event.type == pygame.KEYDOWN:
+					if event.key == pygame.K_SPACE:  # si space est pressed
 							clear() # on clear la fenetre
 
 		
