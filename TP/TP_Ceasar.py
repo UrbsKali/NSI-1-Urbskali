@@ -37,9 +37,9 @@ def code_ceasar(strMessage, iDecalage=3):
 			tmp += val
 			continue
 		if val.isupper():
-			tmp += tmp.join(codage_lettre(val, iDecalage).upper())
+			tmp += codage_lettre(val, iDecalage).upper()
 		else:
-			tmp += tmp.join(codage_lettre(val, iDecalage))
+			tmp += codage_lettre(val, iDecalage)
 	return tmp
 # 4 ) Oui
 

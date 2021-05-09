@@ -1,3 +1,3 @@
-from Cours.cours_1_5.Cours1Serie5 import main
+from  Cours.cours_1_7.Cours1Seriee7 import main
 
-main()
+print(main())

@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "nsi-1-urbain"
+name = "repl_python3_NSI-1-Urbain"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["repl.it user <replituser@example.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+cx-freeze = "^6.6"
 pygame = "^2.0.1"
-cx-freeze = "^6.5.3"
 
 [tool.poetry.dev-dependencies]
 
