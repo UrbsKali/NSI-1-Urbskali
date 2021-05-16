@@ -23,11 +23,7 @@ def main():
         },
     ]
 
-    autre = [{'début': 32400, 'fin': 39600, 'nom': 'Match de foot 1', 'compatible': [0], 'id': 3}, {'début': 34200, 'fin': 39600, 'nom': 'Match de basket', 'compatible': [0], 'id': 2}, {'début': 39300, 'fin': 40500, 'nom': 'Match de ping-pong', 'compatible': [], 'id': 1}, {'début': 39900, 'fin': 47100, 'nom': 'Match de foot 2', 'compatible': [], 'id': 0}]
-
     return gymnase(events)
-    #return choose_compatible(autre[0]["compatible"],autre)
-
 
 def rendu_monnai(argent):
     pieces = [200, 100, 50, 20, 5]
@@ -154,3 +150,7 @@ def choose_compatible(compatibles, events):
 				tmp.append({"nb": len(events[i]["compatible"]), "id": i})
 		
 		return sorted(tmp, reverse=True, key=lambda h: h.get("nb"))[0]["id"]
+
+
+
+	

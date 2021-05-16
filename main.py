@@ -1,3 +1,3 @@
-from  Cours.cours_1_7.Cours1Seriee7 import main
+from  TP.TP_kNN import main
 
 print(main())
