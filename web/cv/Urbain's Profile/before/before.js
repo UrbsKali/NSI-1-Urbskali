@@ -83,7 +83,7 @@ function initObjects() {
 }
 
 function startAnim() {
-  iframe.src = "/main/main.html";
+  iframe.src = "./main/main.html";
   document.body.classList.remove('revealed');
   objects.forEach(mesh => {
     mesh.rotation.set(0, 0, 0);
