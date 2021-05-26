@@ -32,12 +32,14 @@ var town = new THREE.Object3D();
 
 var createCarPos = true;
 var uSpeed = 0.001; // 0.001
-
+city.rotation.x = -0.05
+city.rotation.y = 29.6
+city.rotation.z = -7.42
 //----------------------------------------------------------------- FOG background
 
 //var setcolor = 0xF02050;
 //var setcolor = 0xF2F111;
-var setcolor = 0x1A2238;  // Bleu de la scroll bar
+var setcolor = 0xFF6A3D;  // Orange de la scroll bar
 
 scene.background = new THREE.Color(setcolor);
 scene.fog = new THREE.Fog(setcolor, 10, 16);
@@ -99,10 +101,10 @@ function init() {
     floor.scale.y = 0.05;//+mathRandom(0.5);
     cube.scale.y = 0.1+Math.abs(mathRandom(8));
     //TweenMax.to(cube.scale, 1, {y:cube.rotationValue, repeat:-1, yoyo:true, delay:i*0.005, ease:Power1.easeInOut});
-    /*cube.setScale = 0.1+Math.abs(mathRandom());
+    cube.setScale = 0.1+Math.abs(mathRandom());
     
     TweenMax.to(cube.scale, 4, {y:cube.setScale, ease:Elastic.easeInOut, delay:0.2*i, yoyo:true, repeat:-1});
-    TweenMax.to(cube.position, 4, {y:cube.setScale / 2, ease:Elastic.easeInOut, delay:0.2*i, yoyo:true, repeat:-1});*/
+    TweenMax.to(cube.position, 4, {y:cube.setScale / 2, ease:Elastic.easeInOut, delay:0.2*i, yoyo:true, repeat:-1});
     
     var cubeWidth = 0.9;
     cube.scale.x = cube.scale.z = cubeWidth+mathRandom(1-cubeWidth);
@@ -209,7 +211,7 @@ var generateCar = function() {
 }
 //----------------------------------------------------------------- LINES world
 
-var createCars = function(cScale = 2, cPos = 20, cColor = 0xDD6622) {
+var createCars = function(cScale = 2, cPos = 20, cColor = 0x9DAAF2) {
   var cMat = new THREE.MeshToonMaterial({color:cColor, side:THREE.DoubleSide});
   var cGeo = new THREE.CubeGeometry(1, cScale/40, cScale/40);
   var cElem = new THREE.Mesh(cGeo, cMat);
@@ -242,21 +244,30 @@ var generateLines = function() {
 };
 
 //----------------------------------------------------------------- CAMERA position
-/*
+
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
-
-  camera.position.z = t * -0.01;
-  camera.position.x = t * -0.002;
-  camera.rotation.y = t * -0.002;
+  console.log()
+  if(t===0) {
+    city.rotation.x = -0.05
+    city.rotation.y = 29.6
+    city.rotation.z = -7.42
+  }
+  city.rotation.y -= ((t * 8) - camera.rotation.y) * uSpeed * 0.01 ;
+  city.rotation.x -= (-(t * 2) - camera.rotation.x) * uSpeed * 0.01;
+  city.rotation.z -= (-(t * 2) - camera.rotation.x) * uSpeed * 0.01;
+  if (city.rotation.x < -0.05) city.rotation.x = -0.05;
+  else if (city.rotation.x>1) city.rotation.x = 1;
+  var cityRotation = Math.sin(Date.now() / 5000) * 13;
+  //camera.lookAt(city.position);
 }
 
 document.body.onscroll = moveCamera;
-*/
+
 
 
 var cameraSet = function() {
-  createCars(0.1, 20, 0xFFFFFF);
+  createCars(0.1, 20, 0x9DAAF2);
   //TweenMax.to(camera.position, 1, {y:1+Math.random()*4, ease:Expo.easeInOut})
 };
 
@@ -266,11 +277,7 @@ var animate = function() {
   var time = Date.now() * 0.00005;
   requestAnimationFrame(animate);
   
-  city.rotation.y -= ((mouse.x * 8) - camera.rotation.y) * uSpeed;
-  city.rotation.x -= (-(mouse.y * 2) - camera.rotation.x) * uSpeed;
-  if (city.rotation.x < -0.05) city.rotation.x = -0.05;
-  else if (city.rotation.x>1) city.rotation.x = 1;
-  var cityRotation = Math.sin(Date.now() / 5000) * 13;
+  
   //city.rotation.x = cityRotation * Math.PI / 180;
   
   //console.log(city.rotation.x);
