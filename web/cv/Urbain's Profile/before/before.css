@@ -17,11 +17,11 @@ a:hover {
 img{
   width: 200px;
   height: 200px;
+
 }
 html,
 body {
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 html{
   background-image: url("https://www.eighties.fr/wp-content/uploads/2017/03/Fond_Eighties.jpg") !important;
