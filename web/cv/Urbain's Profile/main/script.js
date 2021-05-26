@@ -35,6 +35,7 @@ var uSpeed = 0.001; // 0.001
 city.rotation.x = -0.05
 city.rotation.y = 29.6
 city.rotation.z = -7.42
+
 //----------------------------------------------------------------- FOG background
 
 //var setcolor = 0xF02050;
@@ -245,14 +246,10 @@ var generateLines = function() {
 
 //----------------------------------------------------------------- CAMERA position
 
+
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
   console.log()
-  if(t===0) {
-    city.rotation.x = -0.05
-    city.rotation.y = 29.6
-    city.rotation.z = -7.42
-  }
   city.rotation.y -= ((t * 8) - camera.rotation.y) * uSpeed * 0.01 ;
   city.rotation.x -= (-(t * 2) - camera.rotation.x) * uSpeed * 0.01;
   city.rotation.z -= (-(t * 2) - camera.rotation.x) * uSpeed * 0.01;
