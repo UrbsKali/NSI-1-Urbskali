@@ -1,4 +1,4 @@
-// Three JS Template
+// Three JS
 //----------------------------------------------------------------- BASIC parameters
 var renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize( window.innerWidth, window.innerHeight );
