@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <h1>Calcul de l'IMC</h1>
+  <img id="big" class="dipslayed" src="big.png" width="150" height=200 onmouseover="change()"></img>
+
+  <body>
+    
+    <form>
+      
+      Prenom : <input type="text" >
+      <br><br>Année de Naissance : <input id="an" type="var" >
+
+    </form>
+    <br><br> 
+    <button onclick="age()"> Votre âge </button>
+    <li id="ans"></li>
+    
+    <form>
+      <br><br> Je suis : une femme <input id="sexf" name="sexe"  type="radio" value="f" checked > un homme <input id="sexm"  name="sexe" type="radio" value="h" >
+      <br><br>Taille en cm : <input id="t" type="text" >
+      <br><br>Masse en kg : <input id="m" type="text" >  
+    </form>
+    <button onclick="etat()">Soumettre</button>
+    <p id="calc"></p>
+    <p id="state"></p>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
