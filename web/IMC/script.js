@@ -2,21 +2,22 @@ function IMC(){
     t = document.getElementById("t").value;
     m = document.getElementById("m").value;
     x = 10000 * m / (t * t);
-    document.getElementById("calc").innerText = "Votre imc est " + x 
     return x
 }
 
 function etat() {
     x = IMC();
+    tmp = ""
     if (x < 18.5) {
-        document.getElementById("state").innerText = "Vous êtes en insuffisance pondérale"
+        tmp = "Vous êtes en insuffisance pondérale"
     } else if ( 18.5 < x < 25 ){
-        document.getElementById("state").innerText = "Vous êtes en poids normal"
+        tmp = "Vous êtes en poids normal"
     } else if ( 25 <= x < 30 ){
-        document.getElementById("state").innerText = "Vous êtes en surpoids"
+        tmp = "Vous êtes en surpoids"
     } else if ( 30 < x ){
-        document.getElementById("state").innerText = "Vous êtes en obésité"
+        tmp = "Vous êtes en obésité"
     }
+    return tmp
 }
 
 function change(){ 
@@ -47,6 +48,30 @@ function getRadioValue() {
 }
 
 function IMG(){
-    img_ = (1,20 * IMC()) + (0,23 * age() ) - (10,8 * parseInt(getRadioValue()) ) - 5,4
+    let img_ = ( 1.20 * IMC() ) + ( 0.23 * age() ) - (10.8 * parseInt(getRadioValue()) ) - 5.4
     return img_
+}
+
+function draw_tab(){
+    tableau = document.getElementsByClassName("tab-container")[0]
+    tableau.innerHTML = `<table class="table text-light">
+    <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Age</th>
+        <th scope="col">IMC</th>
+        <th scope="col">IMG</th>
+        <th scope="col">Interpretation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${document.getElementById("nom").value}</td>
+        <td>${age()}</td>
+        <td>${Math.round(IMC())}</td>
+        <td>${Math.round(IMG())} %</td>
+        <td>${etat()}</td>
+      </tr>
+    </tbody>
+  </table>`
 }

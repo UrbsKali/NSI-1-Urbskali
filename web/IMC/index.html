@@ -12,7 +12,7 @@
     
     <form>
       
-      Prenom : <input type="text" >
+      Prenom : <input type="text" id="nom">
       <br><br>Année de Naissance : <input id="an" type="var">
 
     </form>
@@ -25,10 +25,12 @@
       <br><br>Taille en cm : <input id="t" type="text" >
       <br><br>Masse en kg : <input id="m" type="text" >  
     </form>
-    <button onclick="etat()">Soumettre</button>
+    <button onclick="draw_tab()">Soumettre</button>
     <p id="calc"></p>
     <p id="state"></p>
+    <div class="tab-container">
 
+    </div>
     <script src="script.js"></script>
 
   </body>
