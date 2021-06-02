@@ -83,7 +83,7 @@ function draw_tab(){
         <td>${age()}</td>
         <td>${Math.round(IMC())}</td>
         <td>${Math.round(IMG())} %</td>
-        <td>${etat()}</td>
+        <td>${etat("IMC")} / ${etat("IMG")} </td>
       </tr>
     </tbody>
   </table>`
