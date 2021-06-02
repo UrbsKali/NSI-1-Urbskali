@@ -5,27 +5,32 @@ function IMC(){
     return x
 }
 
-function etat() {
-    x = IMC();
-    imc = ""
-    img = ""
-    if (x < 18.5) imc = "Vous êtes en insuffisance pondérale"
-    else if ( 18.5 < x < 25 ) imc = "Vous êtes en poids normal"
-    else if ( 25 <= x < 30 ) imc = "Vous êtes en surpoids"
-    else if ( 30 < x ) imc = "Vous êtes en obésité"
-    y = IMG()
-    sexe = getRadioValue()
-    if (sexe === 1) {
-        if (y < 15) img = "trop maigre"
-        else if (y <= 20) img = "poids normal"
-        else img = "trop de graisse"
+function etat(what) {
+    if (what === "IMC") {
+        x = IMC();
+        imc = ""
+        if (x < 18.5) imc = "Vous êtes en insuffisance pondérale"
+        else if ( 18.5 < x < 25 ) imc = "Vous êtes en poids normal"
+        else if ( 25 <= x < 30 ) imc = "Vous êtes en surpoids"
+        else if ( 30 < x ) imc = "Vous êtes en obésité"
+        return imc
+    } else {
+        y = IMG()
+        sexe = parseInt(getRadioValue())
+        if (sexe === 1) {
+            if (y < 15) img = "trop maigre"
+            else if (y <= 20) img = "poids normal"
+            else img = "trop de graisse"
+        }
+        else {
+            if (y < 25) img = "trop maigre"
+            else if (y <= 30) img = "masse graisseuuse normal"
+            else img = "trop de graisse"
+        }
+        return img
     }
-    else {
-        if (y < 25) img = "trop maigre"
-        else if (y <= 30) img = "masse graisseuuse normal"
-        else img = "trop de graisse"
-    }
-    return imc, img
+    
+    
 }
 
 function change(){ 
